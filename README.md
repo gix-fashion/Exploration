@@ -1,2 +1,2 @@
 # Exploration
-Data exploration and analysing
+可以发现某些衣服具有季节效应，因此决定对地区，月份，货品名称，颜色，尺码进行独热编码
