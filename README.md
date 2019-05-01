@@ -17,3 +17,6 @@ columns = ['sale_no', 'sale_date', 'channel_id', 'sale_price', 'sku_id', 'Quanti
 
 
 https://drive.google.com/open?id=1lMcOcIRbq5FcJs18vg00vuBu8Q_iHDOI
+
+
+### 定义了销售时的季节： 345春，678夏， 9 10 11秋， 12 1 2冬
