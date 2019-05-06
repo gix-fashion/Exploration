@@ -16,6 +16,9 @@ https://drive.google.com/open?id=1lMcOcIRbq5FcJs18vg00vuBu8Q_iHDOI
 
 ### 定义了销售时的季节： 345春，678夏， 9 10 11秋， 12 1 2冬
 
-### goods.csv： 筛选了货品特征，仅包括了很好的渠道特征
+### goods.csv： 筛选了货品特征，仅包括了很必要的渠道特征
 
 https://drive.google.com/open?id=1BVHQKsN215BHZX-tfeo8-WTSwGe0eaGk
+### goods_channel.csv: 筛选了货品特征，包括了渠道特征
+
+https://drive.google.com/open?id=1_yA66yAo6QRu0x_Zxdi66s2sRlT5y9SL
