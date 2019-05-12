@@ -22,3 +22,10 @@ https://drive.google.com/open?id=1BVHQKsN215BHZX-tfeo8-WTSwGe0eaGk
 ### goods_channel.csv: 筛选了货品特征，包括了渠道特征
 
 https://drive.google.com/open?id=1_yA66yAo6QRu0x_Zxdi66s2sRlT5y9SL
+
+
+
+年份.zip :https://drive.google.com/open?id=1nngLn_XwArSI9zxMsecLGZgf8ZdSP8Sd
+店铺.zip:https://drive.google.com/open?id=1y0Aylt3a8YHW-MPtaetl0Y_2gNDUkXei
+purchase_info.csv :https://drive.google.com/open?id=1BVwZdkWWuJIRHc7Co02Hjr5DKfXVcAIa
+purchase_2013.csv:https://drive.google.com/open?id=1U1EBO3ukqhk6Lie8_UkfZ5A52qNPc8oF
