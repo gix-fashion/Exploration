@@ -1,3 +1,5 @@
+KMpre.csv :https://drive.google.com/open?id=1VdSq17AvE3wQjRoS7pLVn3SqQYRAdaNU
+
 # Exploration
 可以发现某些衣服具有季节效应，因此决定对地区，月份，货品名称，颜色，尺码进行独热编码
 
@@ -29,3 +31,4 @@ https://drive.google.com/open?id=1_yA66yAo6QRu0x_Zxdi66s2sRlT5y9SL
 店铺.zip:https://drive.google.com/open?id=1y0Aylt3a8YHW-MPtaetl0Y_2gNDUkXei
 purchase_info.csv :https://drive.google.com/open?id=1BVwZdkWWuJIRHc7Co02Hjr5DKfXVcAIa
 purchase_2013.csv:https://drive.google.com/open?id=1U1EBO3ukqhk6Lie8_UkfZ5A52qNPc8oF
+
