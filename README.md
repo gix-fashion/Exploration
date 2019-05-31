@@ -1,4 +1,5 @@
 data_pre:包括了鞋子，裤子，衬衫的预处理数据，为发售开始前八周的数据
+https://drive.google.com/open?id=1A7C0mlh0uitAzikKc3Cap-qWM6bCZRUJ
 
 
 KMpre.csv :https://drive.google.com/open?id=1VdSq17AvE3wQjRoS7pLVn3SqQYRAdaNU
