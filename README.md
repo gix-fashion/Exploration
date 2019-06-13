@@ -1,3 +1,7 @@
+611_results.csv : 利用调配方法应用在611的数据集上
+https://drive.google.com/open?id=16DpwUyhdCoS4J3S16bGqf5jFZa1UezOK
+
+
 data_pre:包括了鞋子，裤子，衬衫的预处理数据，为发售开始前八周的数据
 https://drive.google.com/open?id=1A7C0mlh0uitAzikKc3Cap-qWM6bCZRUJ
 
