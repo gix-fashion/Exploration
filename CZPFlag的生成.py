@@ -111,12 +111,12 @@ def to_zcp(x,y):
         return("超滞")
     
 for name, group in groupby:
-    mid = pd.read_csv(input5+name+".csv")                          #中类的标准,SKU
+    mid = pd.read_csv(input5+name+"分公司"+".csv")                        #中类的标准,SKU
     mid.set_index("中类",inplace = True)
     group["Y"] = group.apply(lambda x: accumulate(x,mid))
     group["X_sku"] = (group['TotalSaleQty']/group['TotalMoveQty'])*0.5+0.5*(group['LastWeekSaleQty']/(group['LastWeekInitQty']+group['LastWeekMoveQty']))
     group["X_skc"] = (group['SKCTotalSaleQty']/group['SKCTotalMoveQty'])*0.5+0.5*(group['SKCLastWeekSaleQty']/(group['SKCLastWeekInitQty']+group['SKCLastWeekMoveQty']))
     group['CZPFlag'] = group.apply(lambda x: to_czp(x["X_sku"],x["Y"]))
     group['SKCCZPFlag'] = group.apply(lambda x: to_czp(x["X_skc"],x["Y"]))
-    group.tp_csv(name+"补货数据.csv",)
+    group.to_csv(name+"补货数据.csv",)
 
