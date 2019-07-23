@@ -36,7 +36,9 @@ def season(i):
     if i in [12,1,2]:
         return "冬"
     return np.nan
-    
+useful_col = ['AreaName','ShopCode','MatCode','SizeName','LastWeekSaleQty',"AvgLastWeekSaleQty",
+'LastWeekMoveQty','LastWeekInitQty','CZPFlag','SKCCzpFlag','CZPSuppleRate','DisPlayQty','SizeCoreFlag']  
+df = df[useful_col]
 
 #清洗
 df["AvgLastWeekSaleQty"].fillna(0,inplace = True)
@@ -55,7 +57,7 @@ df["当季"] =(df["Season"]==df["SeasonName"]).astype("int")
 
 storage = df['LastWeekInitQty'] + df['LastWeekMoveQty'] - df['LastWeekSaleQty']
 total_need = df['LastWeekSaleQty'] * df['CZPSuppleRate'] + df['DisPlayQty'] #需求= 上周销量 * 畅滞平系数 + 陈列需求 – 现有库存
-
+df["Qty"] = storage
 #计算需求减去库存
 need = total_need-storage
 #考虑Sku & Skc的CZP
