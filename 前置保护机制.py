@@ -12,7 +12,7 @@ import sys
 
 args = sys.argv 
 
-input1 = "need.csv"  # 补货信息的文件路径
+input1 = "need_611_nj.csv"  # 补货信息的文件路径
 input2 = "utf-8" #编码方式
 input3 = "standard.csv"#保护值标准
 output = "sku_results.csv"#输出
@@ -139,4 +139,3 @@ df_final[(mask1*mask2).astype("bool")].to_csv("当年当季_623.csv",index = Fal
 df_final[(mask1*(1-mask2)).astype("bool")].to_csv("不当年但当季_623.csv",index = False)
 df_final[((1-mask1)*(1-mask2)).astype("bool")].to_csv("不当年不当季_623.csv",index = False)
 df_final[((1-mask1)*mask2).astype("bool")].to_csv("当年不当季_623.csv",index = False)
-
