@@ -18,9 +18,9 @@ output = "sku_need.csv"#输出
 
 if len(args)>1:
     input1 = args[1]
-if len(agrs)>2:
+if len(args)>2:
     input2 = args[2]
-if len(agrs)>3:
+if len(args)>3:
     output = args[3]
 
 df = pd.read_csv(input1,encoding = input2) #补货数据
