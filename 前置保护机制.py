@@ -12,18 +12,18 @@ import sys
 
 args = sys.argv 
 
-input1 = "补货信息.csv"  # 补货信息的文件路径
-input2 = "gbk" #编码方式
+input1 = "need.csv"  # 补货信息的文件路径
+input2 = "utf-8" #编码方式
 input3 = "standard.csv"#保护值标准
 output = "sku_results.csv"#输出
 
 if len(args)>1:
     input1 = args[1]
-if len(agrs)>2:
+if len(args)>2:
     input2 = args[2]
-if len(agrs)>3:
+if len(args)>3:
     input3= args[3]
-if len(agrs)>4:
+if len(args)>4:
     output = args[4]    
     
     
