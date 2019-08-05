@@ -38,13 +38,13 @@ input4 = 1             #是否按照李蕊学姐的文件重新整理分公司�
 input5 = "销售占比/"    #输出分公司文件的文件夹
 if len(args)>1:
     input1 = args[1]
-if len(agrs)>2:
+if len(args)>2:
     input2 = args[2]
-if len(agrs)>3:
+if len(args)>3:
     input3 = args[3]
-if len(agrs)>4:
+if len(args)>4:
     input4 = args[4]
-if len(agrs)>5:
+if len(args)>5:
     input5 = args[5]
 #读取数据，并且计算周数
 df =pd.read_csv(input1,encoding="gbk")
