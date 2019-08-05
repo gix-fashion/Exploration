@@ -135,8 +135,8 @@ df_final.to_csv(output,index = False)
 mask1 = (df_final["当季"]==1).astype("int")
 mask2 = (df_final["当年"]==1).astype("int")
 
-df_final[mask1*mask2].to_csv("当年当季_623.csv",index = False)
-df_final[mask1*(1-mask2)].to_csv("不当年但当季_623.csv",index = False)
-df_final[(1-mask1)*(1-mask2)].to_csv("不当年不当季_623.csv",index = False)
-df_final[(1-mask1)*mask2].to_csv("当年不当季_623.csv",index = False)
+df_final[(mask1*mask2).astype("bool")].to_csv("当年当季_623.csv",index = False)
+df_final[(mask1*(1-mask2)).astype("bool")].to_csv("不当年但当季_623.csv",index = False)
+df_final[((1-mask1)*(1-mask2)).astype("bool")].to_csv("不当年不当季_623.csv",index = False)
+df_final[((1-mask1)*mask2).astype("bool")].to_csv("当年不当季_623.csv",index = False)
 
