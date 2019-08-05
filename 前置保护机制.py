@@ -11,6 +11,7 @@ input1 = "sku_need.csv"  # 补货信息的文件路径
 input2 = "utf-8" #编码方式
 input3 = "standard.csv"#保护值标准
 output = "sku_results.csv"#输出
+
 if len(args)>1:
     input1 = args[1]
 if len(args)>2:
@@ -19,10 +20,12 @@ if len(args)>3:
     input3= args[3]
 if len(args)>4:
     output = args[4]    
-    
+   
     
 df = pd.read_csv(input1,encoding = input2) #补货数据
 standard = pd.read_csv(input3)#标准
+
+
 
 standard.rename({"店铺代码":"ShopCode","在店库存件数\n（下限值）":"StorageMin","陈列SKC标准":"SkcNum","齐码率":"UniformRate"},axis = 1,inplace =True)
 
@@ -34,6 +37,10 @@ df_["调入不调出保护"] = 0
 mask= (df_["need_coefficient"]<0) #调出的
 df_["调入不调出保护"][mask*(df_["LastWeekMoveQty"]>0)] = 1 #上周调入过，且这周想要调出的sku，被保护
 
+
+###
+
+ 
 ### 保护
 
 #2.5调入不调出保护，第一遍过滤,如果上周有调入则不调出,但是可以调入
@@ -54,6 +61,10 @@ def top(df):
     df["top保护"][lst] = 1
     return df
 df_=group.apply(top)
+
+###
+
+ 
 """
 #2.8(最小包裹保护) 由于最小包裹保护也会改变满场率，放在库存量保护之前
 group = df_.groupby(by = "ShopCode",sort = False)
@@ -75,6 +86,10 @@ def clean(df):
 
 df_=group.apply(clean)
 
+
+###
+
+ 
 # 2.3(库存量保护)  以及2.1(满场率保护)
 ##在这里我们判断调出后是否满足库存量以及满场率，如果不满足则优先保留调出导致断码的货品（提升满场率），
 ##并且优先保留调出需求小的（可提升满场率以及库存量）
@@ -102,6 +117,12 @@ def MinSkc(df):#满场率的保护
     return df    
 df_ = group.apply(MinSkc) 
 group = df_.groupby(by = "ShopCode",sort = False)
+
+
+###
+
+ 
+
 def MinStorageProtect(df):
     
     store =(df["Qty"]+df["SkuNeed"] ).sum()#库存
@@ -117,10 +138,12 @@ def MinStorageProtect(df):
                 break
         mask =(((df["Qty"]+df["SkuNeed"])==0)*df["SizeCoreFlag"]*(df["SkuNeed"]<0)==1) #找到导致缺码且要调出的sku
         df["尾数清零保护"] = mask  #更新是否导致了缺码以及清零，避免出现错误
-        return df 
+    return df 
 df_=group.apply(MinStorageProtect)
 
+###
 
+ 
 
 df_final = df_.reset_index(drop = True)
 df_final.to_csv(output,index = False)
