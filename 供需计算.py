@@ -82,7 +82,7 @@ czp_coefficient =df.apply(czp,axis =1)#SKC为 滞销 超滞销的 可以 供出 
 need_coefficient = ((need>0).astype("int"))*2-1
 
 need_sku = need*czp_coefficient 
-need_sku= need_sku+abs(need_sku)#只保留大于零的，表示供需consistent
+need_sku= (need_sku+abs(need_sku))/2.0#只保留大于零的，表示供需consistent
 need_sku = need_sku*need_coefficient #赋予符号
 
 
