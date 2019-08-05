@@ -1,9 +1,4 @@
 
-# coding: utf-8
-
-# In[ ]:
-
-
 import pandas as pd
 import numpy as np
 
@@ -12,11 +7,10 @@ import sys
 
 args = sys.argv 
 
-input1 = "need_611_nj.csv"  # 补货信息的文件路径
+input1 = "sku_need.csv"  # 补货信息的文件路径
 input2 = "utf-8" #编码方式
 input3 = "standard.csv"#保护值标准
 output = "sku_results.csv"#输出
-
 if len(args)>1:
     input1 = args[1]
 if len(args)>2:
