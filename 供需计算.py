@@ -23,6 +23,7 @@ if len(args)>2:
 if len(args)>3:
     output = args[3]
 
+
 df = pd.read_csv(input1,encoding = input2) #补货数据
 
 
@@ -36,9 +37,8 @@ def season(i):
     if i in [12,1,2]:
         return "冬"
     return np.nan
-useful_col = ['AreaName','ShopCode','MatCode','SizeName','LastWeekSaleQty',"AvgLastWeekSaleQty",
-'LastWeekMoveQty','LastWeekInitQty','CZPFlag','SKCCzpFlag','CZPSuppleRate','DisPlayQty','SizeCoreFlag']  
-df = df[useful_col]
+
+
 
 #清洗
 df["AvgLastWeekSaleQty"].fillna(0,inplace = True)
@@ -52,7 +52,9 @@ df["当年"] =(df["Year"].astype("int")==df["YearNo"].astype(int)).astype("int")
 df["当季"] =(df["Season"]==df["SeasonName"]).astype("int")
 
 
-
+useful_col = ['AreaName','ShopCode','MatCode','SizeName','LastWeekSaleQty',"AvgLastWeekSaleQty",
+'LastWeekMoveQty','LastWeekInitQty','CZPFlag','SKCCzpFlag','CZPSuppleRate','DisPlayQty','SizeCoreFlag','当年','当季']
+df = df[useful_col]
 
 
 storage = df['LastWeekInitQty'] + df['LastWeekMoveQty'] - df['LastWeekSaleQty']
@@ -90,4 +92,5 @@ df["SkuNeed"] = need_sku
 df["need_coefficient"]=need_coefficient
 
 df.to_csv(output,index = False)
+
 
