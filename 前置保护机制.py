@@ -146,6 +146,7 @@ df_=group.apply(MinStorageProtect)
  
 
 df_final = df_.reset_index(drop = True)
+df_final["SkuNeed"] =  df_final["SkuNeed"].astype("int")
 df_final.to_csv(output,index = False)
 
 
